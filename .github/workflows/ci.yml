@@ -26,6 +26,19 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          # 형식: <도커허브아이디>/<이미지이름>:<태그>
-          # 도커 허브 아이디를 Secret에서 가져와 동적으로 할당합니다.
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/img_to_text_api:latest
+
+  deploy:
+    needs: build-and-push
+    runs-on: self-hosted
+    
+    steps:
+      - name: Pull latest image
+        run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/img_to_text_api:latest
+
+      - name: Stop and Remove old container
+        continue-on-error: true
+        run: docker rm -f img_to_text_api
+
+      - name: Run new container
+        run: docker run -d --name img_to_text_api -p 8000:8000 ${{ secrets.DOCKERHUB_USERNAME }}/img_to_text_api:latest
