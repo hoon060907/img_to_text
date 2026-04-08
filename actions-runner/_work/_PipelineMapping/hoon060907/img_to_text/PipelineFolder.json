@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "hoon060907/img_to_text",
+  "pipelineDirectory": "img_to_text",
+  "workspaceDirectory": "img_to_text\\img_to_text",
+  "repositories": {
+    "hoon060907/img_to_text": {
+      "repositoryPath": "img_to_text\\img_to_text",
+      "lastRunOn": "04/08/2026 20:03:45 +09:00"
+    }
+  },
+  "lastRunOn": "04/08/2026 20:18:26 +09:00"
+}

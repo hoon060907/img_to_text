@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 2,
+  "agentName": "DESKTOP-NB49B0S",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus7.actions.githubusercontent.com/IlyBtRiSOkmV6C1hmK5sBCSsNDFiq63GKnTsf5NwZbCO9VOhhm/",
+  "gitHubUrl": "https://github.com/hoon060907/img_to_text",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}
