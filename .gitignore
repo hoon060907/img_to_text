@@ -1,0 +1,16 @@
+# Node/Expo
+node_modules/
+.expo/
+npm-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+.env
+
+# MacOS
+.DS_Store

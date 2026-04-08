@@ -26,7 +26,7 @@ app.add_middleware(
 # We are using EasyOCR with Korean ('ko') and English ('en') support.
 # gpu=True 셋팅을 통해 CUDA 외장 그래픽 연산을 활성화합니다. (PyTorch CUDA 설치 필요)
 print("Loading OCR Model...")
-reader = easyocr.Reader(['ko', 'en'], gpu=True)
+reader = easyocr.Reader(['ko', 'en', 'ja', 'ch_sim'], gpu=True)
 print("OCR Model loaded successfully.")
 
 @app.get("/")
