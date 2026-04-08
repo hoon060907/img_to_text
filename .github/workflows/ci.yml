@@ -1,0 +1,31 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main
+      - master # master 브랜치를 사용할 경우를 대비해 추가
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          # 형식: <도커허브아이디>/<이미지이름>:<태그>
+          # 도커 허브 아이디를 Secret에서 가져와 동적으로 할당합니다.
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/img_to_text_api:latest
